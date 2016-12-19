@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>quick_sort</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>void __swap_&lt;#Type#&gt;(&lt;#Type#&gt; *a, &lt;#Type#&gt; *b)
+{
+	&lt;#Type#&gt; temp = *a;
+	*a = *b;
+	*b = temp;
+}
+
+void sort_int(&lt;#Type#&gt; *s, int l, int r)
+{
+	if (l &gt;= r)
+		return;
+	int m = (l + r) &gt;&gt; 1;
+	if (s[l] &gt; s[m])
+		__swap_&lt;#Type#&gt;(&amp;s[l], &amp;s[m]);
+	if (s[l] &gt; s[r])
+		__swap_&lt;#Type#&gt;(&amp;s[l], &amp;s[r]);
+	if (s[r] &gt; s[m])
+		__swap_&lt;#Type#&gt;(&amp;s[r], &amp;s[m]);
+	&lt;#Type#&gt; x = s[r];
+	int i = l - 1, p = l - 1, j = r, q = r;
+	for (;;)
+	{
+		while (s[++i] &lt; x);
+		while (s[--j] &gt; x)
+			if (j == l)
+				break;
+		if (i &gt;= j)
+			break;
+		__swap_&lt;#Type#&gt;(&amp;s[i], &amp;s[j]);
+		if (s[i] == x)
+			__swap_&lt;#Type#&gt;(&amp;s[i], &amp;s[++p]);
+		if (s[j] == x)
+			__swap_&lt;#Type#&gt;(&amp;s[j], &amp;s[--q]);
+	}
+	__swap_&lt;#Type#&gt;(&amp;s[i], &amp;s[r]);
+	j = i - 1;
+	i = i + 1;
+	int k;
+	for (k = l; k &lt;= p &amp;&amp; j &gt; p; k++, j--)
+		__swap_&lt;#Type#&gt;(&amp;s[j], &amp;s[k]);
+	j -= p - k + 1;
+	for (k = r - 1; k &gt;= q &amp;&amp; i &lt; q; k--, i++)
+		__swap_&lt;#Type#&gt;(&amp;s[i], &amp;s[k]);
+	i += k - q + 1;
+	sort_&lt;#Type#&gt;(s, l, j);
+	sort_&lt;#Type#&gt;(s, i, r);
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>4C7DF5A8-E894-4F25-AB72-09BD467F716E</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>C Quick Sort (User)</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

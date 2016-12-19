@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>compare</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>int __compare(const void *a, const void *b)
+{
+    &lt;#Type#&gt; x = *(&lt;#Type#&gt; *)a;
+	&lt;#Type#&gt; y = *(&lt;#Type#&gt; *)b;
+    return x.&lt;#Field#&gt; - y.&lt;#Field#&gt;;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D54B4462-B5EF-45D0-9E57-6656FC6A7FF1</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>C Compare (User)</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>read_int</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>int read_int()
+{
+	char c = getchar();
+	while (c &lt; '0' || c &gt; '9')
+		c = getchar();
+	int result = 0;
+	while (c &gt;= '0' &amp;&amp; c &lt;= '9')
+	{
+		result = result * 10 + c - '0';
+		c = getchar();
+	}
+	return result;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>6B745D84-DCCE-493B-9018-05ABCF2C492F</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>C Read Int (User)</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

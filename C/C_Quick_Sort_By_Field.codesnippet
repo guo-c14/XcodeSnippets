@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>quick_sort_by_filed</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>void __swap_&lt;#Type#&gt;(&lt;#Type#&gt; *a, &lt;#Type#&gt; *b)
+{
+	&lt;#Type#&gt; temp = *a;
+	*a = *b;
+	*b = temp;
+}
+
+void sort_&lt;#Type#&gt;(&lt;#Type#&gt; *s, int l, int r)
+{
+	if (l &gt;= r)
+		return;
+	int m = (l + r) &gt;&gt; 1;
+    if (s[l].&lt;#Field#&gt; &gt; s[m].&lt;#Field#&gt;)
+		__swap_&lt;#Type#&gt;(&amp;s[l], &amp;s[m]);
+	if (s[l].&lt;#Field#&gt; &gt; s[r].&lt;#Field#&gt;)
+		__swap_&lt;#Type#&gt;(&amp;s[l], &amp;s[r]);
+	if (s[r].&lt;#Field#&gt; &gt; s[m].&lt;#Field#&gt;)
+		__swap_&lt;#Type#&gt;(&amp;s[r], &amp;s[m]);
+	int x = s[r].&lt;#Field#&gt;;
+	int i = l - 1, p = l - 1, j = r, q = r;
+	for (;;)
+	{
+		while (s[++i].&lt;#Field#&gt; &lt; x);
+		while (s[--j].&lt;#Field#&gt; &gt; x)
+			if (j == l)
+				break;
+		if (i &gt;= j)
+			break;
+		__swap_&lt;#Type#&gt;(&amp;s[i], &amp;s[j]);
+		if (s[i].&lt;#Field#&gt; == x)
+			__swap_&lt;#Type#&gt;(&amp;s[i], &amp;s[++p]);
+		if (s[j].&lt;#Field#&gt; == x)
+			__swap_&lt;#Type#&gt;(&amp;s[j], &amp;s[--q]);
+	}
+	__swap_&lt;#Type#&gt;(&amp;s[i], &amp;s[r]);
+	j = i - 1;
+	i = i + 1;
+	int k;
+	for (k = l; k &lt;= p &amp;&amp; j &gt; p; k++, j--)
+		__swap_&lt;#Type#&gt;(&amp;s[j], &amp;s[k]);
+	j -= p - k + 1;
+	for (k = r - 1; k &gt;= q &amp;&amp; i &lt; q; k--, i++)
+		__swap_&lt;#Type#&gt;(&amp;s[i], &amp;s[k]);
+	i += k - q + 1;
+	sort_&lt;#Type#&gt;(s, l, j);
+	sort_&lt;#Type#&gt;(s, i, r);
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>164E95BB-D073-44BB-88E4-9E1E45D2BAA2</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>C Quick Sort By Field (User)</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
